@@ -27,52 +27,28 @@ function render(variables = {}) {
   // here we ask the logical questions to make decisions on how to build the html
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
-  if (variables.includeCover == false) cover = "<div class='cover'></div>";
-  if (variables.name === null) {
-    variables.name = "Nombre";
-  } else {
-    variables.name;
-  }
-  if (variables.lastName === null) {
-    variables.lastName = "Apellido";
-  } else {
-    variables.lastName;
-  }
-  if (variables.role === null) {
-    variables.role = "Web Developer";
-  } else {
-    variables.role;
-  }
-  if (variables.city === null) {
-    variables.city = "Miami";
-  } else {
-    variables.city;
-  }
-  if (variables.country === null) {
-    variables.country = "USA";
-  } else {
-    variables.country;
-  }
-  if (variables.twitter === null) {
-    variables.twitter = "https://twitter.com/4geeksacademy";
-  } else {
-    variables.twitter;
-  }
-  if (variables.github === null) {
-    variables.github = "https://github.com/4geeksacademy";
-  } else {
-    variables.github;
-  }
-  if (variables.linkedin === null) {
-    variables.linkedin = "https://linkedin.com/school/4geeksacademy";
-  } else {
-    variables.linkedin;
-  }
-  if (variables.instagram === null) {
-    variables.instagram = "https://instagram.com/4geeksacademy";
-  } else {
-    variables.instagram;
-  }
+  variables.includeCover == false
+    ? (cover = "<div class='cover'></div>")
+    : (cover = `<div class="cover"><img src="${variables.background}" /></div>`);
+  variables.name === null ? (variables.name = "Nombre") : variables.name;
+  variables.lastName === null
+    ? (variables.lastName = "Apellido")
+    : variables.lastName;
+  variables.role === null ? (variables.role = "Web Developer") : variables.role;
+  variables.city === null ? (variables.city = "Miami") : variables.city;
+  variables.country === null ? (variables.country = "USA") : variables.country;
+  variables.twitter === null
+    ? (variables.twitter = "https://twitter.com/4geeksacademy")
+    : variables.twitter;
+  variables.github === null
+    ? (variables.github = "https://github.com/4geeksacademy")
+    : variables.github;
+  variables.linkedin === null
+    ? (variables.linkedin = "https://linkedin.com/school/4geeksacademy")
+    : variables.linkedin;
+  variables.instagram === null
+    ? (variables.instagram = "https://instagram.com/4geeksacademy")
+    : variables.instagram;
   // reset the website body with the new html output
   document.querySelector(
     "#widget_content"
